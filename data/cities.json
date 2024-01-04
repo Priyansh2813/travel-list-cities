@@ -1,0 +1,52 @@
+{
+  "cities": [
+    {
+      "cityName": "Kestel",
+      "countryName": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2023-11-09T19:23:30.637Z",
+      "notes": "",
+      "position": {
+        "lat": "40.10958807474143",
+        "lng": "29.27993774414063"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Bengaluru",
+      "countryName": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-11-09T20:01:23.982Z",
+      "notes": "Amazing internship experience",
+      "position": {
+        "lat": "12.971772888635215",
+        "lng": "77.58888244628908"
+      },
+      "id": 2
+    },
+    {
+      "cityName": "Bengaluru",
+      "countryName": "India",
+      "emoji": "🇮🇳",
+      "date": "2023-11-09T20:01:53.173Z",
+      "notes": "",
+      "position": {
+        "lat": "12.968594534825176",
+        "lng": "77.57326126098634"
+      },
+      "id": 3
+    },
+    {
+      "cityName": "Nuwara Eliya",
+      "countryName": "Sri Lanka",
+      "emoji": "🇱🇰",
+      "date": "2023-11-09T20:02:05.061Z",
+      "notes": "",
+      "position": {
+        "lat": "6.948238638117019",
+        "lng": "80.81542968750001"
+      },
+      "id": 4
+    }
+  ]
+}
