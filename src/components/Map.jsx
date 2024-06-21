@@ -12,8 +12,8 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
-import { useCities } from "../contexts/CitiesContext";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useCities } from "../contexts/useCities";
+import { useNavigate } from "react-router-dom";
 import { useGeolocation } from "../Hooks/useGeolocation";
 import Button from "./Button";
 import { useURLPosition } from "../Hooks/useURLPosition";
@@ -31,17 +31,22 @@ function Map() {
   } = useGeolocation();
 
   const { cities } = useCities();
+
+
+ 
   useEffect(
     function () {
       if (mapLat && mapLng) setMapPositions([mapLat, mapLng]);
+      return;
     },
     [mapLat, mapLng]
   );
 
   useEffect(
     function () {
-      if (geolocationPosition)
-        setMapPositions([geolocationPosition.lat, geolocationPosition.lng]);
+      if (geolocationPosition){
+        
+        setMapPositions([geolocationPosition.lat, geolocationPosition.lng]);}
     },
     [geolocationPosition]
   );
@@ -69,7 +74,7 @@ function Map() {
               key={city.id}
             >
               <Popup>
-                <span>{city.emoji}</span> <span>{city.cityame}</span>
+                <span>{city.cityName}</span>
               </Popup>
             </Marker>
           );
@@ -83,7 +88,9 @@ function Map() {
 
 function ChangeCenter({ position }) {
   const map = useMap();
+  
   map.setView(position);
+
   return null;
 }
 
@@ -91,7 +98,8 @@ function DetectClick() {
   const navigate = useNavigate();
 
   useMapEvents({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    
+    click: (e) => { navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)},
   });
 }
 export default Map;

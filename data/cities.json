@@ -47,6 +47,30 @@
         "lng": "80.81542968750001"
       },
       "id": 4
+    },
+    {
+      "cityName": "Bilecik",
+      "countryName": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-06-21T13:36:43.408Z",
+      "notes": "",
+      "position": {
+        "lat": "40.00764232847669",
+        "lng": "30.0062370300293"
+      },
+      "id": 5
+    },
+    {
+      "cityName": "Aralik",
+      "countryName": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-06-21T13:36:57.223Z",
+      "notes": "",
+      "position": {
+        "lat": "39.928614070002155",
+        "lng": "44.40673828125"
+      },
+      "id": 6
     }
   ]
 }

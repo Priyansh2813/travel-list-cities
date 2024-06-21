@@ -3,7 +3,8 @@ import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
-import { useCities } from "../contexts/CitiesContext";
+import { useCities } from "../contexts/useCities";
+import {v4 as uuid} from "uuid"
 
 function CountryList() {
   const { cities, isLoading } = useCities();
@@ -12,17 +13,13 @@ function CountryList() {
   if (!cities.length)
     return <Message message="Add first city by clicking on the Map." />;
 
-  const countries = cities.reduce((arr, city) => {
-    if (!arr.map((el) => el.country).includes(city.country)) {
-      return [
-        ...arr,
-        {
-          country: city.country,
-          emoji: city.emoji,
-        },
-      ];
-    } else return arr;
-  }, []);
+  const new_countries = [...new Set(cities.map(city => city.countryName))];
+  const countries = new_countries.map(country => ({
+    id: uuid(),
+    country,
+  }));
+ 
+
 
   return (
     <ul className={styles.countryList}>

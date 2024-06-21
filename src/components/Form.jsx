@@ -12,8 +12,8 @@ import Spinner from "./Spinner";
 import BackButton from "./BackButton";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useCities } from "../contexts/CitiesContext";
-
+import { useCities } from "../contexts/useCities";
+import {v4 as uuid  } from "uuid"
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
@@ -69,8 +69,12 @@ function Form() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    
+   
     if (!date || !cityName) return;
+ 
     const newCity = {
+      id:uuid(),
       cityName,
       countryName,
       emoji,
@@ -78,7 +82,9 @@ function Form() {
       notes,
       position: { lat, lng },
     };
+    
     await createCity(newCity);
+   
     navigate("/app/cities");
   }
   const [date, setDate] = useState(new Date());
